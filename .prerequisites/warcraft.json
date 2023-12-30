@@ -1,0 +1,12 @@
+{
+  "mapdir": "(1)Map.w3x",
+  "files": [],
+  "lua": {
+    "package": {
+      "path": [
+        "./?.lua",
+        "./?/init.lua"
+      ]
+    }
+  }
+}

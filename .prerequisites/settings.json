@@ -1,0 +1,23 @@
+{
+    "editor.rulers": [
+        120
+    ],
+    "editor.wordWrap": "on",
+    // Lua
+    "Lua.diagnostics.ignoredFiles": "Disable",
+    "Lua.workspace.ignoreDir": [
+        "*.w3x",
+        "libs",
+        "src/lib"
+    ],
+    "Lua.workspace.library": [
+        "libs",
+        "src/lib"
+    ],
+    // warcarft-vscode
+    "warcraft.autoCloseClient": true,
+    "warcraft.configuration": "Debug",
+    "warcraft.gamePath": "<Folder>\\Warcraft III.exe",
+    "warcraft.warcraftVersion": "Reforge",
+    "warcraft.wePath": "<Folder>\\World Editor.exe"
+}

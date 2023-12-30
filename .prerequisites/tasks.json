@@ -1,0 +1,44 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run Warcraft",
+            "type": "shell",
+            "command": "${command:extension.warcraft.run.debug}",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Presubmit",
+            "type": "shell",
+            "command": "${workspaceFolder}\\tools\\CodeFormat.exe",
+            "args": [
+                "format",
+                "-ow",
+                "-w",
+                ".",
+                "-c",
+                ".editorconfig",
+                "-igf",
+                ".formatignore"
+            ]
+        },
+        {
+            "label": "Dump Objects",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}\\.def"
+            },
+            "command": "${env:USERPROFILE}\\.vscode\\extensions\\dencer.warcraft-vscode-0.1.13\\bin\\ObjEditing.exe",
+            "args": [
+                "-m",
+                "'..\\(1)Map.w3x'",
+                "-o",
+                "obj",
+                "-d"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,8 @@
+# Generated
+.build
+.def
+/imports/war3mapMisc.txt
+
+# Config
+.vscode
+/warcraft.json

@@ -1,0 +1,5 @@
+.build
+.def
+*.w3x/*
+libs
+src/lib
