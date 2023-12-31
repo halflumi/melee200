@@ -2,17 +2,14 @@ local u
 
 -- Antonidas
 u = HeroDefinition:new(UID.ANTONIDAS, "Hgam")
+u:applyMeleeStats(Race.Human)
+u:setHeroAbilities(CommaString(AID.FROST_STORM, AID.SUMMON_BLOOD_ELEMENTAL, AID.MANA_WARD, AID.MASS_RECALL))
+u:setNormalAbilities(CommaString("AInv", AID.SPIRITUAL_FIRE_BALL))
 u:setArmorSoundType(ArmorSoundType.Ethereal)
 u:setAttack1ProjectileArt([[Models\BlueFireBallMissile.mdl]])
 u:setButtonPositionY(2)
-u:setFoodCost(5)
-u:setHeroAbilities(CommaString(AID.FROST_STORM, AID.SUMMON_BLOOD_ELEMENTAL, AID.MANA_WARD, AID.MASS_RECALL))
 u:setHotkey("G")
 u:setMovementSound("HumanHeroArchMageMovement")
-u:setNormalAbilities(CommaString("AInv", AID.SPIRITUAL_FIRE_BALL))
-u:setRequierementsForTier(2, "hkee")
-u:setRequierementsForTier(3, "hcas")
-u:setRequierementsTiersUsed(3)
 u:setTooltipBasic("Summon |cffffcc00G|rhostly Archmage")
 u:setTooltipRevive("Revive |cffffcc00G|rhostly Archmage")
 u:setTooltipExtended(

@@ -2,12 +2,9 @@ local u
 
 -- Furion
 u = HeroDefinition:new(UID.FURION, "Emfr")
-u:setBuildTime(55)
-u:setButtonPositionX(1)
-u:setButtonPositionY(2)
-u:setFoodCost(5)
+u:applyMeleeStats(Race.Nightelf)
 u:setFormationRank(2)
-u:setHotkey("K")
+u:setStartingStrength(16)
 u:setHeroAbilities(CommaString(
     AID.MASS_ENTANGLING_ROOTS,
     AID.ARMY_OF_NATURE,
@@ -15,16 +12,11 @@ u:setHeroAbilities(CommaString(
     AID.ANCESTRAL_REINCARNATION)
 )
 u:setNormalAbilities(CommaString("AInv,Ault", AID.NATURE_AFFINITY))
-u:setLumberCost(100)
-u:setManaInitialAmount(100)
-u:setRepairLumberCost(100)
-u:setRepairTime(55)
-u:setRequierementsForTier(2, "etoa")
-u:setRequierementsForTier(3, "etoe")
-u:setRequierementsTiersUsed(3)
+u:setButtonPositionX(1)
+u:setButtonPositionY(2)
+u:setHotkey("K")
 u:setScalingValue(1)
 u:setSelectionScale(1.75)
-u:setStartingStrength(16)
 u:setTooltipBasic("Summon |cffffcc00K|reeper of the Grove")
 u:setTooltipRevive("Revive |cffffcc00K|reeper of the Grove")
 u:setTooltipExtended(

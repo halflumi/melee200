@@ -1,18 +1,16 @@
 local u = HeroDefinition:new(UID.ARTHAS, "Harf")
-u:setButtonPositionX(2)
-u:setButtonPositionY(2)
-u:setFoodCost(5)
+u:applyMeleeStats(Race.Human)
+u:setDefenseBase(2)
 u:setHeroAbilities(CommaString(
     AID.AREA_HOLY_LIGHT,
     AID.RESONATING_BLADE,
     AID.KING_STRIDE_AURA,
     AID.FROST_BLAST)
 )
-u:setHotkey("A")
 u:setNormalAbilities(CommaString("AInv", AID.PLOT_ARMOR))
-u:setRequierementsForTier(2, "hkee")
-u:setRequierementsForTier(3, "hcas")
-u:setRequierementsTiersUsed(3)
+u:setButtonPositionX(2)
+u:setButtonPositionY(2)
+u:setHotkey("A")
 u:setTooltipBasic("Summon |cffffcc00A|rrthas")
 u:setTooltipRevive("Revive |cffffcc00A|rrthas")
 u:setTooltipExtended(

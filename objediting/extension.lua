@@ -3,6 +3,7 @@
 ---@alias ArmorType string
 ---@alias AttackType string
 ---@alias MovementType string
+---@alias Race string
 ---@alias WeaponSound string
 ---@alias WeaponType string
 
@@ -53,8 +54,53 @@ function AbilityDefinition:setWardUnitType(level, value)
     self.def:setLvlDataString("hwdu", level, 0, value)
 end
 
+---@param race Race
+function HeroDefinition:applyMeleeStats(race)
+    self:setAttack1DamageBase(0)
+    self:setDefenseBase(0)
+    self:setHitPointsRegenerationRate(0.25)
+    self:setManaInitialAmount(100)
+    self:setManaMaximum(0)
+    self:setManaRegeneration(0.01)
+
+    self:setBuildTime(55)
+    self:setFoodCost(5)
+    self:setGoldCost(425)
+    self:setLumberCost(100)
+    self:setRepairLumberCost(100)
+    self:setRepairTime(55)
+    self:setRequirementsTiersUsed(3)
+
+    if race == Race.Human then
+        self:setRequierementsForTier(2, "hkee")
+        self:setRequierementsForTier(3, "hcas")
+    elseif race == Race.Orc then
+        self:setRequierementsForTier(2, "ostr")
+        self:setRequierementsForTier(3, "ofrt")
+    elseif race == Race.Undead then
+        self:setHitPointsRegenerationRate(2)
+        self:setHitPointsRegenerationType("blight")
+        self:setRequierementsForTier(2, "unp1")
+        self:setRequierementsForTier(3, "unp2")
+    elseif race == Race.Nightelf then
+        self:setHitPointsRegenerationRate(0.5)
+        self:setHitPointsRegenerationType("night")
+        self:setRequierementsForTier(2, "etoa")
+        self:setRequierementsForTier(3, "etoe")
+    elseif race == Race.Creeps then
+        self:setRequirements("TALT")
+        self:setRequierementsForTier(2, "TWN2,TALT")
+        self:setRequierementsForTier(3, "TWN3,TALT")
+        self:setStockMaximum(1)
+        self:setStockReplenishInterval(0)
+        self:setStockStartDelay(135)
+    else
+        error("Invalid hero race: " .. race)
+    end
+end
+
 ---@param count integer
-function HeroDefinition:setRequierementsTiersUsed(count)
+function HeroDefinition:setRequirementsTiersUsed(count)
     ---@diagnostic disable-next-line: undefined-field
     self.def:setInt("urqc", count)
 end
