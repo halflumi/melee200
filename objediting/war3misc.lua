@@ -7,7 +7,7 @@ end
 append("[HERO]")
 append("DependencyOr=" ..
     CommaString(
-        CommaString(UID.ARTHAS, UID.ANTONIDAS, UID.FURION),
+        CommaString(UID.ARTHAS, UID.ANTONIDAS, UID.FURION, UID.KAELTHAS),
         "Hamg,Hblm,Hmkg,Hpal,Obla,Ofar,Oshd,Otch,Edem,Ekee,Emoo,Ewar,Ucrl,Udea,Udre,Ulic,Npbm,Nbrn,Nngs,Nplh,Nbst"
     )
 )
