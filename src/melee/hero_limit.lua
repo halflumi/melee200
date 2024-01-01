@@ -3,6 +3,7 @@ OnInit.trig(function()
     local heroes = {
         UID.ARTHAS,
         UID.ANTONIDAS,
+        UID.FURION,
     }
 
     for i = 0, bj_MAX_PLAYERS - 1 do
