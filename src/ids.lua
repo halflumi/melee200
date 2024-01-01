@@ -68,6 +68,7 @@ UID = {
     TREANT_MELEE = "ha21",
     TREANT_RANGED = "ha22",
     ANCIENT_OF_MANA = { "ha23", "ha24" },
+    KAELTHAS = "HA30",
 }
 
 -- @debug@

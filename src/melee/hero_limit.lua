@@ -4,6 +4,7 @@ OnInit.trig(function()
         UID.ARTHAS,
         UID.ANTONIDAS,
         UID.FURION,
+        UID.KAELTHAS,
     }
 
     for i = 0, bj_MAX_PLAYERS - 1 do
