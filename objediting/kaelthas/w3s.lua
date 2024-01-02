@@ -36,3 +36,24 @@ for i = 1, MASS_BANISH.MAX_LEVEL do
     a:setDurationNormal(i, MASS_BANISH.DUR(i))
     a:setMovementSpeedReduction(i, 0.5)
 end
+
+
+-- Steal Mana
+a = AbilityDefinitionManaSteal:new(AID.STEAL_MANA)
+a:setLevels(STEAL_MANA.MAX_LEVEL)
+a:setHeroAbility(true)
+a:setItemAbility(false)
+a:setButtonPositionNormalX(2)
+a:setButtonPositionNormalY(2)
+a:setButtonPositionResearchX(2)
+a:setHotkeyLearn("E")
+a:setHotkeyNormal("E")
+a:setIconNormal(STEAL_MANA.ICON)
+a:setIconResearch(STEAL_MANA.ICON)
+a:setToolTips(STEAL_MANA.TOOLTIPS, STEAL_MANA.MAX_LEVEL)
+for i = 1, STEAL_MANA.MAX_LEVEL do
+    a:setCastRange(i, STEAL_MANA.CAST_RANGE)
+    a:setCooldown(i, STEAL_MANA.CD(i))
+    a:setLifeConvertedtoMana(i, STEAL_MANA.STEAL(i))
+    a:setManaCost(i, STEAL_MANA.COST)
+end

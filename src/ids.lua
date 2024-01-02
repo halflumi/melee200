@@ -40,6 +40,7 @@ AID = {
     NATURE_AFFINITY_MANA = "AA2D",
     MASS_BANISH = "AA30",
     MASS_BANISH_IMPL = "AA31",
+    STEAL_MANA = "AA32",
 }
 
 BID = {

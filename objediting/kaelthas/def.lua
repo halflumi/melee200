@@ -29,3 +29,35 @@ MASS_BANISH.TOOLTIPS = AbilityTooltip:new(
         AID.MASS_BANISH_IMPL, AID.MASS_BANISH
     )
 )
+
+STEAL_MANA = {
+    -- Arts
+    ICON = [[ReplaceableTextures\CommandButtons\BTNSpellSteal.blp]],
+    -- Stats
+    MAX_LEVEL = 5,
+    CAST_RANGE = 650,
+    CD = function(x) return 12 - (x - 1) end,
+    COST = 10,
+    STEAL = function(x) return 30 + 15 * (x - 1) end,
+}
+-- Texts
+STEAL_MANA.TOOLTIPS = AbilityTooltip:new(
+    FormatString(
+        [=[Steal Mana (|cffffcc00E|r) - [|cffffcc00Level {v}|r]]=]
+    ), FormatString(
+        "Steals <{1},DataA{v}> points of mana from a target unit and gives it to the Hero." ..
+        "|n|cffffff00Can steal mana from friendly units.|r" ..
+        "|n" ..
+        "|n|cffffdeadCast Range: <{1},Rng{v}> units|r" ..
+        "|n|cffffdeadCooldown: <{1},Cool{v}> seconds|r",
+        AID.STEAL_MANA
+    ), FormatString(
+        [=[Learn Steal Mana (|cffffcc00E|r) - [|cffffcc00Level %d|r]]=]
+    ), FormatString(
+        "Steals mana from a target unit and gives it to the Hero." ..
+        "|n|cffffff00Can steal mana from friendly units.|r"
+    ), FormatString(
+        "|cffffcc00Level {v}|r - <{1},Cool{v}> seconds cooldown, steals <{1},DataA{v}> points of mana.",
+        AID.STEAL_MANA
+    )
+)
