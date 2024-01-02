@@ -57,3 +57,21 @@ for i = 1, STEAL_MANA.MAX_LEVEL do
     a:setLifeConvertedtoMana(i, STEAL_MANA.STEAL(i))
     a:setManaCost(i, STEAL_MANA.COST)
 end
+
+
+-- Mana Breathe
+a = AbilityDefinitionBloodMageSiphonMana:new(AID.MANA_BREATHE)
+a:setAreaofEffect(1, MANA_BREATHE.CAST_RANGE + 200)
+a:setButtonPositionNormalX(1)
+a:setButtonPositionNormalY(1)
+a:setCastRange(1, MANA_BREATHE.CAST_RANGE)
+a:setCooldown(1, MANA_BREATHE.CD)
+a:setDrainIntervalseconds(1, 0.5)
+a:setDurationHero(1, MANA_BREATHE.DUR)
+a:setDurationNormal(1, MANA_BREATHE.DUR)
+a:setHotkeyNormal("F")
+a:setIconNormal(MANA_BREATHE.ICON)
+a:setManaCost(1, MANA_BREATHE.COST)
+a:setManaTransferredPerSecond(1, MANA_BREATHE.TARNS)
+a:setTargetsAllowed(1, "friend,invu,organic,vuln")
+a:setToolTips(MANA_BREATHE.TOOLTIPS)

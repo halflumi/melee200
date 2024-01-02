@@ -41,6 +41,7 @@ AID = {
     MASS_BANISH = "AA30",
     MASS_BANISH_IMPL = "AA31",
     STEAL_MANA = "AA32",
+    MANA_BREATHE = "AA33",
 }
 
 BID = {

@@ -3,7 +3,7 @@ local u
 -- Kaelthas
 u = HeroDefinition:new(UID.KAELTHAS, "Hblm")
 u:setHeroAbilities(CommaString(AID.MASS_BANISH, AID.STEAL_MANA))
-u:setNormalAbilities(CommaString("AInv,Asph"))
+u:setNormalAbilities(CommaString("AInv,Asph", AID.MANA_BREATHE))
 u:setIconGameInterface([[ReplaceableTextures\CommandButtons\BTNBloodMage2.blp]])
 u:setModelFile([[Models\PrinceKaelThasTCV1.mdx]])
 u:setProperNames("Kael")
