@@ -61,3 +61,26 @@ STEAL_MANA.TOOLTIPS = AbilityTooltip:new(
         AID.STEAL_MANA
     )
 )
+
+MANA_BREATHE = {
+    -- Arts
+    ICON = [[ReplaceableTextures\CommandButtons\BTNManaBreathe.blp]],
+    -- Stats
+    CAST_RANGE = 800,
+    CD = 0,
+    COST = 0,
+    DUR = 10,
+    TARNS = 15, -- Proc twice per second.
+}
+-- Texts
+MANA_BREATHE.TOOLTIPS = AbilityTooltip:new(
+    FormatString(
+        "Mana Breathe (|cffffcc00F|r)"
+    ), FormatString(
+        "Transfers {f1} mana per second to an ally." ..
+        "|nLasts <{1},Dur1> seconds.",
+        AID.MANA_BREATHE
+    ), {
+        function(x) return tostring(2 * MANA_BREATHE.TARNS) end
+    }
+)
