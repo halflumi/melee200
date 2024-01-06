@@ -103,6 +103,7 @@ end
 -- Ancient Incarnation
 a = AbilityDefinitionKeeperoftheGroveForceofNature:new(AID.ANCESTRAL_REINCARNATION)
 a:setLevels(ANCIENT_REINCARNATION.MAX_LEVEL)
+a:setLevelSkipRequirement(6)
 a:setRequiredLevel(6)
 a:setArtSpecial("")
 a:setButtonPositionNormalX(3)
