@@ -42,6 +42,8 @@ AID = {
     MASS_BANISH_IMPL = "AA31",
     STEAL_MANA = "AA32",
     MANA_BREATHE = "AA33",
+    FLOATING_CHAOS = "AA34",
+    FLOATING_CHAOS_ATK = "AA35",
 }
 
 BID = {
@@ -59,6 +61,7 @@ BID = {
     RADIANT_ENERGY = "EA22",
     WRATH_OF_NATURE = "EA23",
     NATURE_AFFINITY = "EA24",
+    FLOATING_CHAOS = "EA30",
 }
 
 UID = {
@@ -73,6 +76,7 @@ UID = {
     TREANT_RANGED = "ha22",
     ANCIENT_OF_MANA = { "ha23", "ha24" },
     KAELTHAS = "HA30",
+    FLOATING_CHAOS = "ha31",
 }
 
 -- @debug@

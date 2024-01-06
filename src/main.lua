@@ -3,6 +3,7 @@ dofile("lib/influa/timed.lua")
 dofile("lib/influa/total_initialization.lua")
 dofile("lib/new_bonus.lua") -- requires Total Initialization
 dofile("lib/player_unit_event.lua")
+dofile("lib/preload_utils.lua") -- requires Total Initialization
 dofile("lib/spell_effect_event.lua")
 dofile("lib/synced_table.lua")
 
@@ -28,6 +29,7 @@ dofile("skills/ancient_incarnation.lua")
 dofile("skills/area_holy_light.lua")
 dofile("skills/army_of_nature.lua")
 dofile("skills/blood_elemental.lua")
+dofile("skills/floating_chaos.lua")
 dofile("skills/frost_blast.lua")
 dofile("skills/kings_stride_aura.lua")
 dofile("skills/mana_ward.lua")

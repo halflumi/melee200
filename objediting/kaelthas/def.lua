@@ -84,3 +84,42 @@ MANA_BREATHE.TOOLTIPS = AbilityTooltip:new(
         function(x) return tostring(2 * MANA_BREATHE.TARNS) end
     }
 )
+
+FLOATING_CHAOS = {
+    -- Arts
+    ICON = [[ReplaceableTextures\CommandButtons\BTNSphereOfFire.blp]],
+    MDX_FIREBALL = [[Models\OrbFireX.mdx]],
+    MDX_PROJ = [[Models\FireboltRoughMinor.mdx]],
+    -- Stats
+    MAX_LEVEL = 5,
+    CAST_RANGE = 600,
+    CD = 12,
+    COST = 100,
+    -- Fireball stats
+    DMG = function(x) return 40 + 20 * (x - 1) end,
+    DUR = function(x) return 8 + (x - 1) end,
+    RANGE = 600,
+}
+-- Texts
+FLOATING_CHAOS.TOOLTIPS = AbilityTooltip:new(
+    FormatString(
+        [=[Floating Chaos (|cffffcc00Q|r) - [|cffffcc00Level {v}|r]]=]
+    ), FormatString(
+        "Summons a floating fiery ball that shoots at enemies within {f3} units once per second. Each shot deals {f1} damage." ..
+        "|nLasts {f2} seconds." ..
+        "|n" ..
+        "|n|cffffdeadCast Range: <{1},Rng{v}> units|r" ..
+        "|n|cffffdeadCooldown: <{1},Cool{v}> seconds|r",
+        AID.FLOATING_CHAOS
+    ), FormatString(
+        [=[Learn Floating Chaos (|cffffcc00Q|r) - [|cffffcc00Level %d|r]]=]
+    ), FormatString(
+        "Summons a floating fiery ball that shoots at enemies within {f3} units once per second."
+    ), FormatString(
+        "|cffffcc00Level {v}|r - {f1} damage per shot, lasts {f2} seconds."
+    ), {
+        function(x) return FLOATING_CHAOS.DMG(x) end,
+        function(x) return FLOATING_CHAOS.DUR(x) end,
+        function(x) return FLOATING_CHAOS.RANGE end,
+    }
+)
