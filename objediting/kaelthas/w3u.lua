@@ -2,7 +2,7 @@ local u
 
 -- Kaelthas
 u = HeroDefinition:new(UID.KAELTHAS, "Hblm")
-u:setHeroAbilities(CommaString(AID.FLOATING_CHAOS, AID.MASS_BANISH, AID.STEAL_MANA))
+u:setHeroAbilities(CommaString(AID.FLOATING_CHAOS, AID.MASS_BANISH, AID.STEAL_MANA, AID.RAIN_OF_HELLFIRE))
 u:setNormalAbilities(CommaString("AInv,Asph", AID.MANA_BREATHE))
 u:setIconGameInterface([[ReplaceableTextures\CommandButtons\BTNBloodMage2.blp]])
 u:setModelFile([[Models\PrinceKaelThasTCV1.mdx]])
@@ -10,7 +10,7 @@ u:setProperNames("Kael")
 u:setProperNamesUsed(1)
 u:setUnitSoundSet("Kael")
 u:setTooltipExtended(
-    "Mystical Hero, adept at controlling magic and ranged assaults. Can learn Floating Chaos, Mass Banish, Steal Mana." ..
+    "Mystical Hero, adept at controlling magic and ranged assaults. Can learn Floating Chaos, Mass Banish, Steal Mana and Rain of Hellfire." ..
     "|n" ..
     "|n|cffffcc00Attacks land and air units.|r"
 )
