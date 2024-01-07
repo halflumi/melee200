@@ -123,3 +123,49 @@ FLOATING_CHAOS.TOOLTIPS = AbilityTooltip:new(
         function(x) return FLOATING_CHAOS.RANGE end,
     }
 )
+
+RAIN_OF_HELLFIRE = {
+    -- Arts
+    ICON = [[ReplaceableTextures\CommandButtons\BTNRainofFire.blp]],
+    MDX = [[Models\RainofFireVol.II.mdx]],
+    -- Stats
+    MAX_LEVEL = 2,
+    AOE = 450,
+    CAST_RANGE = 900,
+    CD = 120,
+    COST = 200,
+    DMG = function(x) return 150 + 100 * (x - 1) end,
+    DUR = 10,
+    DOT_DMG = function(x) return 20 + 20 * (x - 1) end,
+    DOT_DUR = 5,
+    INTERVAL = 0.2,
+    INTERVAL_SOUND = 0.5,
+    SHARD_AOE = 80,
+}
+-- Texts
+RAIN_OF_HELLFIRE.TOOLTIPS = AbilityTooltip:new(
+    FormatString(
+        [=[Rain of Hellfire (|cffffcc00R|r) - [|cffffcc00Level {v}|r]]=]
+    ), FormatString(
+        "Calls down waves of hellfire that damage enemy units in a large area. Each fire strike deals <{1},DataB{v}> initial damage and <{1},DataE{v}> damage per second for <{1},Dur{v}> seconds to enemies around the point of impact." ..
+        "|nLasts <{2},DataA{v}> seconds." ..
+        "|n" ..
+        "|n|cffffdeadAoE: <{2},Area{v}> units|r" ..
+        "|n|cffffdeadCast Range: <{2},Rng{v}> units|r" ..
+        "|n|cffffdeadCooldown: <{2},Cool{v}> seconds|r" ..
+        "|n|cffffdeadStrike Interval: {f1} second|r" ..
+        "|n|cffffdeadStrike AoE: <{1},Area{v}> units|r",
+        AID.RAIN_OF_HELLFIRE_IMPL, AID.RAIN_OF_HELLFIRE
+    ), FormatString(
+        [=[Learn Rain of Hellfire (|cffffcc00R|r) - [|cffffcc00Level %d|r]]=]
+    ), FormatString(
+        "Calls down waves of hellfire that damage enemy units in a large area. Each fire strike deals initial damage and damage over time for <{1},Dur{v}> seconds to enemies around the point of impact." ..
+        "|nLasts <{2},DataA{v}> seconds.",
+        AID.RAIN_OF_HELLFIRE_IMPL, AID.RAIN_OF_HELLFIRE
+    ), FormatString(
+        "|cffffcc00Level {v}|r - <{1},DataB{v}> initial damage, <{1},DataE{v}> damage per second.",
+        AID.RAIN_OF_HELLFIRE_IMPL
+    ), {
+        function(x) return RAIN_OF_HELLFIRE.INTERVAL end
+    }
+)

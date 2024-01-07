@@ -15,3 +15,15 @@ end
 function PolarProjection(x, y, dist, angle)
     return x + dist * Cos(angle * bj_DEGTORAD), y + dist * Sin(angle * bj_DEGTORAD)
 end
+
+---@param x number
+---@param y number
+---@param range number
+---@return number, number
+function GetRandomPointInRange(x, y, range)
+    local angle = math.random() * 2 * math.pi
+    local radius = math.sqrt(math.random()) * range
+    local dx = radius * math.cos(angle)
+    local dy = radius * math.sin(angle)
+    return x + dx, y + dy
+end
