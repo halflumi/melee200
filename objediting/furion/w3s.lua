@@ -13,7 +13,7 @@ a:setHotkeyNormal("Q")
 a:setIconNormal([[ReplaceableTextures\CommandButtons\BTNEntanglingRoots.tga]])
 a:setIconResearch([[ReplaceableTextures\CommandButtons\BTNEntanglingRoots.tga]])
 a:setToolTips(MASS_ENTANGLING_ROOTS.TOOLTIPS, MASS_ENTANGLING_ROOTS.MAX_LEVEL)
-for i = 1, AREA_HOLY_LIGHT.MAX_LEVEL do
+for i = 1, MASS_ENTANGLING_ROOTS.MAX_LEVEL do
     a:setAreaofEffect(i, MASS_ENTANGLING_ROOTS.AOE(i))
     a:setBaseOrderID(i, "channel")
     a:setCastRange(i, MASS_ENTANGLING_ROOTS.CAST_RANGE)
@@ -76,7 +76,7 @@ a:setHotkeyNormal("E")
 a:setIconNormal(PROTECTION_OF_NATURE.ICON)
 a:setIconResearch(PROTECTION_OF_NATURE.ICON)
 a:setToolTips(PROTECTION_OF_NATURE.TOOLTIPS, PROTECTION_OF_NATURE.MAX_LEVEL)
-for i = 1, AREA_HOLY_LIGHT.MAX_LEVEL do
+for i = 1, PROTECTION_OF_NATURE.MAX_LEVEL do
     a:setBaseOrderID(i, "chemicalrage")
     a:setCastRange(i, PROTECTION_OF_NATURE.CAST_RANGE)
     a:setCooldown(i, PROTECTION_OF_NATURE.CD)
