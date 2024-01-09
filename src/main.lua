@@ -24,6 +24,7 @@ dofile("melee/disable_melee_heroes.lua")
 dofile("melee/fov.lua")
 dofile("melee/handicap.lua")
 dofile("melee/hero_limit.lua")
+dofile("melee/music.lua")
 dofile("melee/player_leave.lua")
 
 dofile("skills/ancient_incarnation.lua")
