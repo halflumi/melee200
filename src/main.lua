@@ -1,6 +1,4 @@
-dofile("lib/debug_utils/debug_utils.lua")
-dofile("lib/debug_utils/ingame_console.lua")
-dofile("lib/debug_utils/string_width.lua")
+dofile("lib/debug_utils/init.lua")
 dofile("lib/influa/timed.lua")
 dofile("lib/influa/total_initialization.lua")
 dofile("lib/new_bonus.lua") -- requires Total Initialization
