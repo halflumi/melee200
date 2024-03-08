@@ -38,7 +38,7 @@ do
     ---@param e playerunitevent
     ---@param code function
     function RegisterPlayerUnitEvent(e, code)
-        for i = 0, bj_MAX_PLAYERS - 1 do
+        for i = 0, bj_MAX_PLAYER_SLOTS - 1 do
             RegisterPlayerUnitEventForPlayer(e, code, Player(i))
         end
     end
