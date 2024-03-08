@@ -1,5 +1,4 @@
 local SPAWN_SOUND = [[Sound\Ambient\DoodadEffects\BlueFireBurst.wav]]
-PreloadSound(SPAWN_SOUND)
 
 OnInit.trig(function()
     local CAST_SPELL = FourCC(AID.FLOATING_CHAOS)

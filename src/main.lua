@@ -3,7 +3,6 @@ dofile("lib/influa/timed.lua")
 dofile("lib/influa/total_initialization.lua")
 dofile("lib/new_bonus.lua") -- requires Total Initialization
 dofile("lib/player_unit_event.lua")
-dofile("lib/preload_utils.lua") -- requires Total Initialization
 dofile("lib/spell_effect_event.lua")
 dofile("lib/synced_table.lua")
 
