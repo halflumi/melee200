@@ -54,8 +54,11 @@ a:setToolTips(STEAL_MANA.TOOLTIPS, STEAL_MANA.MAX_LEVEL)
 for i = 1, STEAL_MANA.MAX_LEVEL do
     a:setCastRange(i, STEAL_MANA.CAST_RANGE)
     a:setCooldown(i, STEAL_MANA.CD(i))
+    a:setLeaveTargetAlive(i, true)
     a:setLifeConvertedtoMana(i, STEAL_MANA.STEAL(i))
+    a:setManaConversionAsPercent(i, true)
     a:setManaCost(i, STEAL_MANA.COST)
+    a:setTargetsAllowed(i, "notself")
 end
 
 
@@ -128,6 +131,7 @@ end
 a = AbilityDefinitionIllidanChannel:new(AID.RAIN_OF_HELLFIRE)
 a:setLevels(RAIN_OF_HELLFIRE.MAX_LEVEL)
 a:setLevelSkipRequirement(6)
+a:setRequiredLevel(6)
 a:setArtCaster("")
 a:setArtEffect("")
 a:setArtTarget("")
