@@ -6,3 +6,8 @@
 # Config
 .vscode
 /warcraft.json
+
+# Maps
+/*.w3x
+!/(1)Map.w3x
+!/(4)LostTemple200.w3x
