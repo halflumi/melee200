@@ -15,6 +15,11 @@ function IsUnitAlive(unit)
 end
 
 ---@param unit unit
+function IsUnitMagicImmune(unit)
+    return IsUnitType(unit, UNIT_TYPE_MAGIC_IMMUNE)
+end
+
+---@param unit unit
 ---@param percentage number
 function SetUnitHealth(unit, percentage)
     SetUnitState(unit, UNIT_STATE_LIFE, GetUnitState(unit, UNIT_STATE_MAX_LIFE) * percentage)

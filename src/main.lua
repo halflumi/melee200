@@ -9,6 +9,7 @@ dofile("lib/synced_table.lua")
 dofile("utils/ability.lua")
 dofile("utils/coordinate.lua")
 dofile("utils/destructible.lua")
+dofile("utils/math.lua")
 dofile("utils/group.lua")
 dofile("utils/unit.lua")
 

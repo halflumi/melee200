@@ -1,11 +1,11 @@
-local SPAWN_SOUND = [[Sound\Ambient\DoodadEffects\BlueFireBurst.wav]]
-
 OnInit.trig(function()
     local CAST_SPELL = FourCC(AID.FLOATING_CHAOS)
     local FIREBALL_SPELL = FourCC(AID.FLOATING_CHAOS_ATK)
     local FIREBALL_UNIT = FourCC(UID.FLOATING_CHAOS)
 
+    local SPAWN_SOUND = [[Sound\Ambient\DoodadEffects\BlueFireBurst.wav]]
     local SPAWN_EFFECT = [[Objects\Spawnmodels\Human\SmallFlameSpawn\SmallFlameSpawn.mdl]]
+    local PROJECTILE = [[Models\FireboltRoughMinor.mdx]]
 
     RegisterSpellEffectEvent(CAST_SPELL, function()
         local caster = GetTriggerUnit()
@@ -28,13 +28,40 @@ OnInit.trig(function()
         SetUnitAbilityLevel(ball, FIREBALL_SPELL, GetUnitAbilityLevel(caster, CAST_SPELL))
         Timed.echo(1.0, function()
             if (not IsUnitAlive(ball)) then return true end
-            local targets = GetUnitsInAoe(x, y, fireball_range, function(u)
-                return not IsUnitAlly(u, p) and IsUnitAlive(u)
+
+            local potential_targets = GetUnitsInAoe(x, y, fireball_range, function(u)
+                return not IsUnitAlly(u, p) and IsUnitAlive(u) and not IsUnitMagicImmune(u)
             end)
-            if #targets > 0 then
-                local target = targets[math.random(#targets)]
-                IssueTargetOrder(ball, "acidbomb", target)
+
+            local units, buildings = {}, {}
+            for _, u in ipairs(potential_targets) do
+                if IsUnitType(u, UNIT_TYPE_STRUCTURE) then
+                    table.insert(buildings, u)
+                else
+                    table.insert(units, u)
+                end
             end
+
+            local fired = false
+            local function try_firing(targets)
+                if fired then return end
+                local sequence = GenerateRandomSequence(#targets)
+                for _, i in ipairs(sequence) do
+                    if IssueTargetOrder(ball, "acidbomb", targets[i]) then
+                        fired = true
+                        return
+                    end
+                end
+            end
+            try_firing(units)
+            try_firing(buildings)
+
+            if not fired then
+                local proj = AddSpecialEffect(PROJECTILE, x, y)
+                BlzSetSpecialEffectHeight(proj, 240)
+                DestroyEffect(proj)
+            end
+
             return false;
         end)
     end)
